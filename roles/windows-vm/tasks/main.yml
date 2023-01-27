@@ -1,0 +1,11 @@
+---
+#- name: Upload VM Image
+#  unarchive:
+#    src: files/windows-11.zip
+#    dest: /Virtualization/DISK/
+
+- name: Define VM
+  community.libvirt.virt:
+     command: define
+     xml: "{{ lookup('file', 'windows-11.xml') }}"
+
