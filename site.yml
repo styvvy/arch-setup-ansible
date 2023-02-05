@@ -10,19 +10,19 @@
   become: yes
 
   roles:
-    #    - essential-setup
-    #- directory-setup
-    # - pacman-packages
-    # - aur-packages
-#    - display-manager-ly
-#  - xorg-setup
-#    - i3-setup
-#    - amd-gpu-setup
-#    - terminal-setup-alacritty
-#    - qemu-setup
-#    - polybar
-#    - gpu-passthru
-#    - fancontrol
-#    - windows-vm
-#    - firefox-setup
+    - essential-setup
+    - directory-setup
+    - pacman-packages
+    - aur-packages
+  # - display-manager-ly
+    - xorg-setup
+    - i3-setup
+    - amd-gpu-setup
+    - terminal-setup-alacritty
+    - qemu-setup
+    - polybar
+    - gpu-passthru
+    - fancontrol
+    - windows-vm
+    - firefox-setup
     - theme-setup
