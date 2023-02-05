@@ -1,0 +1,38 @@
+---
+- name: Create directory ".config/qt5ct/colors/" if it does not exist
+  ansible.builtin.file:
+    path: "{{home_dir}}.config/qt5ct/colors/"
+    state: directory
+    mode: '0755'
+    owner: "{{user_name}}"
+
+- name: copy dracula-gtk 
+  unarchive:
+    src: files/dracula-gtk.zip
+    dest: "/usr/share/themes/"
+
+- name: copy dracula-icons 
+  unarchive:
+    src: files/dracula-icons.zip
+    dest: "/usr/share/icons/"
+
+- name: copy dracula-qt5 profile
+  unarchive:
+    src: files/dracula-qt5.zip
+    dest: "{{home_dir}}.config/qt5ct/colors/"
+
+- name: Recursively change ownership of a directory
+  ansible.builtin.file:
+    path: "/usr/share/icons/"
+    state: directory
+    recurse: yes
+    owner: '{{ user_name }}'
+    mode: '0755'
+
+- name: Recursively change ownership of a directory
+  ansible.builtin.file:
+    path: "/usr/share/themes/"
+    state: directory
+    recurse: yes
+    owner: '{{ user_name }}'
+    mode: '0755'
