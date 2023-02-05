@@ -34,3 +34,4 @@ packages:
   - python3
   - python-pip
   - ansible
+  - pcmanfm
